@@ -1,5 +1,12 @@
 ---
 # tasks file for peerau.ssh_banner
+- name: Install ansible keys
+  authorized_key:
+    user: ansible
+    state: present
+    key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+    key_options: 'no-port-forwarding,from="192.168.1.21"'
+
 - name: Create /etc/motd+issue generator
   copy: src=generate.sh dest=/etc/banner.sh mode=o+x
 
