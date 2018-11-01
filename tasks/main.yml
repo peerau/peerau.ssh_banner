@@ -1,5 +1,16 @@
 ---
 # tasks file for peerau.ssh_banner
+- name: Install list of packages
+  apt: name={{item}} state=present
+  with_items:
+   - nano
+   - dnsutils
+   - bc
+   - git
+   - python
+   - tmux
+   - byobu
+
 - name: Install ansible keys
   authorized_key:
     user: ansible
