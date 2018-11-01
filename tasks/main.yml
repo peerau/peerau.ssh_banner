@@ -1,26 +1,7 @@
 ---
-# tasks file for peerau.standard_server
-- name: Install list of packages
-  apt: name={{item}} state=present
-  with_items:
-   - vim-nox
-   - dnsutils
-   - bc
-   - git
-   - ruby
-   - python
-   - tmux
-   - byobu
-   - silversearcher-ag # debian name, dunno for other distros
-
+# tasks file for peerau.ssh_banner
 - name: Create sshd_config
   template: src=templates/sshd_config.txt dest=/etc/ssh/sshd_config
-
-- name: Install admin keys
-  authorized_key:
-    user: root
-    state: present
-    key: https://client-config-a.backslash.systems/client/STAFF/bsys-peer.key
 
 - name: Create /etc/motd+issue generator
   copy: src=generate.sh dest=/etc/banner.sh mode=o+x

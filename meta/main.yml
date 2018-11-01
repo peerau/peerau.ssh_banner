@@ -1,6 +1,6 @@
 galaxy_info:
   author: Jordan Songer
-  description: Standard server setup [WIP]
+  description: Standard ssh banner
   company: backslash systems
 
   license: unlicense
@@ -11,6 +11,9 @@ galaxy_info:
   - name: Debian
     versions:
     - all
+  - name: Ubuntu
+    versions: 
+      - all
 
   galaxy_tags: []
 
