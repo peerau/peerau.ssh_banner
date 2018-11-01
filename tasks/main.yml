@@ -13,7 +13,7 @@
 
 - name: Install ansible keys
   authorized_key:
-    user: ansible
+    user: cactuar
     state: present
     key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
     key_options: 'no-port-forwarding,from="192.168.1.21"'
