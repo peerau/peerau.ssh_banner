@@ -1,8 +1,5 @@
 ---
 # tasks file for peerau.ssh_banner
-- name: Create sshd_config
-  template: src=templates/sshd_config.txt dest=/etc/ssh/sshd_config
-
 - name: Create /etc/motd+issue generator
   copy: src=generate.sh dest=/etc/banner.sh mode=o+x
 
